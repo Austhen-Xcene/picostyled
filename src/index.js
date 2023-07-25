@@ -46,7 +46,7 @@ const parse = (rules, child = '', media) => {
   return className
 }
 
-export default h => tag => (chunks, ...interpolations) => (props, children) => {
+export default h => tag => (chunks, ...interpolations) => ({children, ...props}) => {
   props = props || {}
 
   const className = parse(css(chunks, interpolations, props))
